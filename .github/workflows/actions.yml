@@ -1,16 +1,29 @@
 name: Actions Workflow
 
 on:
-  repository_dispatch:
-    types: [build]
-  schedule:
-    - cron: "0/5 * * * *"
-    - cron: "0/6 * * * *"
+  push:
+    branches:
+      - master
+      - "feature/*" # matches feature/featA but not feature/feat/A
+      - "feature/**" # matches feature/feat/A
+      - "!feature/featC"
+    tags:
+      - v1.*
+    # paths:
+    #   - '**.js' # only run when a js-file changes
+    #   - '!filename.js'
+    paths-ignore:
+      - "docs/**" # don't run on changes in docs
+  # repository_dispatch:
+  #   types: [build]
+  # schedule:
+  #   - cron: "0/5 * * * *"
+  #   - cron: "0/6 * * * *"
   #push:
-  pull_request:
-    types: [closed, assigned, opened, reopened]
-    # GITHUB_SSH = commit id
-    # GITHUB_REF = bransh
+  # pull_request:
+  #   types: [closed, assigned, opened, reopened]
+  # GITHUB_SSH = commit id
+  # GITHUB_REF = bransh
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
