@@ -1,0 +1,31 @@
+name: George
+age: 52
+address: "String with : in it"
+key:
+    key: value
+    key2: 33
+    key3:
+        "key": "value"
+        "key2": value
+jsonObject: {key: value, key2: 33, key3: {key: value}}
+array:
+    - item1
+    - item2
+    - {key: value}
+    jsonArray: [item1, item2]
+objectsArray:
+    - key: value,
+      key2: value2
+    - key: value
+      key2: value2
+longText: >
+    This does _not_ preserve new lines
+    sdajf asdfjaslk asdf jaslöjs daf jasdlkf
+    adsfljl asdlfj asdfjsalödkf jsalf asd fsadf
+    dsalkfjasdl asdfj lsafj asdf
+longText: |
+    This does preserve new lines
+    sdajf asdfjaslk asdf jaslöjs daf jasdlkf
+    adsfljl asdlfj asdfjsalödkf jsalf asd fsadf
+    dsalkfjasdl asdfj lsafj asdf
+
