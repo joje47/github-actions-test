@@ -1,5 +1,5 @@
-name: George
-age: 52
+name: Name
+age: 25
 address: "String with : in it"
 key:
     key: value
